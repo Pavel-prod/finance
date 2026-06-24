@@ -270,7 +270,7 @@ var BASE = {sberStart:641000, carStart:1400000, carPaid0:470000, cushionTarget:3
 
 var CATS = [
   {name:'Продукты',   icon:'🛒', color:'#8B5C28'},
-  {name:'Рестораны',  icon:'🍽️', color:'#B5541E'},
+  {name:'Рестораны',  icon:'🍴', color:'#B5541E'},
   {name:'Кофейня',    icon:'☕', color:'#7A3B1E'},
   {name:'Авто/Бензин',icon:'⛽', color:'#3B2109'},
   {name:'Здоровье',   icon:'💊', color:'#2A5C3A'},
@@ -287,19 +287,19 @@ var CATS = [
 var ENV_DEFS = [
   {id:'sber',      name:'СберКарта',          icon:'💳', color:'#8B5C28', colorL:'#FAF0E4', mode:'flow',  target:641000,  note:'Гасить агрессивно'},
   {id:'car',       name:'Выкуп авто',          icon:'🚗', color:'#3B2109', colorL:'#F4EAE0', mode:'flow',  target:80000,   note:'По умолч. 10к/нед компания. При переездах — до 25к/нед'},
-  {id:'cushion',   name:'Подушка',             icon:'🛡️', color:'#2A5C3A', colorL:'#E6F2EC', mode:'accum', target:300000,  note:'Копим, не трогаем'},
+  {id:'cushion',   name:'Подушка',             icon:'🛡', color:'#2A5C3A', colorL:'#E6F2EC', mode:'accum', target:300000,  note:'Копим, не трогаем'},
   {id:'courses',   name:'Рассрочка курсы',     icon:'📚', color:'#2A5C3A', colorL:'#E6F2EC', mode:'flow',  target:6000,    note:'6к/мес'},
   {id:'boss',      name:'Долг шефу',           icon:'🤝', color:'#78604E', colorL:'#EFE7D9', mode:'flow',  target:126000,  note:'До конца 2026'},
-  {id:'trip_tour', name:'Отпуск · Путёвка',    icon:'🏖️', color:'#9A6618', colorL:'#FAF2E2', mode:'accum', target:150000,  note:'Оплата частями'},
+  {id:'trip_tour', name:'Отпуск · Путёвка',    icon:'🏝', color:'#9A6618', colorL:'#FAF2E2', mode:'accum', target:150000,  note:'Оплата частями'},
   {id:'trip_cash', name:'Отпуск · Наличные',   icon:'🍜', color:'#9A6618', colorL:'#FAF2E2', mode:'accum', target:70000,   note:''},
-  {id:'trip_fly',  name:'Отпуск · Билеты',     icon:'✈️', color:'#9A6618', colorL:'#FAF2E2', mode:'accum', target:30000,   note:''}
+  {id:'trip_fly',  name:'Отпуск · Билеты',     icon:'✈', color:'#9A6618', colorL:'#FAF2E2', mode:'accum', target:30000,   note:''}
 ];
 
 var SEED = {
   investments:[
     {id:'crypto',  name:'Крипта',          icon:'🔐', category:'Цифровые активы',
      invested:175000,  currentVal:175000,  note:'~1 900 USDT на Bybit', entries:[]},
-    {id:'jetcrew', name:'Jet.Crew · Алтай',icon:'🏔️', category:'Бизнес',
+    {id:'jetcrew', name:'Jet.Crew · Алтай',icon:'🏔', category:'Бизнес',
      invested:3300000, currentVal:3300000, note:'Бизнес на Алтае',      entries:[
        {id:'e1',date:'2026',desc:'Первоначальная инвестиция',amount:3300000}
      ]}
@@ -370,6 +370,62 @@ var SEED = {
        {id:'a47',date:'07.06',desc:'Pyaterochka 25990',amount:572.33,cat:'Продукты'},
        {id:'a48',date:'07.06',desc:'Госуслуги — штраф/пошлина авто',amount:5625.00,cat:'Штрафы/Госплатежи'},
        {id:'a49',date:'07.06',desc:'89003 AZS 3',amount:1613.00,cat:'Авто/Бензин'}
+     ]},
+    {id:'j26w3', label:'Июнь, нед 3', dates:'15–22.06', income:50000, comp:40000, carComp:10000, spent:48101.74,
+     sber:null, car:null, note:'Доход: 50к ЗП + 40к компания. Расходы 48 102 ₽. Исключено: ИП Фурсов 35к (аренда команды), MAPP_SBERBANK 84к (аренда бизнес), переводы физлицам ~609к, KARTA-VKLAD 20к (себе). Одежда 16к — Яндекс.Маркет Катя.',
+     transactions:[
+       {id:'c1',date:'15.06',desc:'TK Lenta-317',amount:1962.97,cat:'Продукты'},
+       {id:'c2',date:'15.06',desc:'Perekrestok Golden Park',amount:1565.89,cat:'Продукты'},
+       {id:'c3',date:'15.06',desc:'Perekrestok Golden Park',amount:1109.12,cat:'Продукты'},
+       {id:'c4',date:'15.06',desc:'Travelers Coffee',amount:279.20,cat:'Рестораны'},
+       {id:'c5',date:'16.06',desc:'TK Lenta-317',amount:577.93,cat:'Продукты'},
+       {id:'c6',date:'16.06',desc:'Travelers Coffee',amount:279.20,cat:'Рестораны'},
+       {id:'c7',date:'16.06',desc:'Perekrestok Golden Park',amount:194.98,cat:'Продукты'},
+       {id:'c8',date:'16.06',desc:'Monetka',amount:124.98,cat:'Продукты'},
+       {id:'c9',date:'16.06',desc:'Galamart',amount:49.00,cat:'Одежда'},
+       {id:'c10',date:'16.06',desc:'Galamart',amount:606.00,cat:'Одежда'},
+       {id:'c11',date:'16.06',desc:'Perekrestok Golden Park',amount:514.96,cat:'Продукты'},
+       {id:'c12',date:'16.06',desc:'TK Lenta-317',amount:999.89,cat:'Продукты'},
+       {id:'c13',date:'17.06',desc:'AZS 42 Nizhnevartovsk',amount:2734.00,cat:'Авто/Бензин'},
+       {id:'c14',date:'17.06',desc:'Dom Khleba',amount:107.00,cat:'Рестораны'},
+       {id:'c15',date:'17.06',desc:'YM*Bukvitsaai (нейронка)',amount:649.00,cat:'Подписки'},
+       {id:'c16',date:'17.06',desc:'Travelers Coffee',amount:668.00,cat:'Рестораны'},
+       {id:'c17',date:'17.06',desc:'IL Patio',amount:695.00,cat:'Рестораны'},
+       {id:'c18',date:'17.06',desc:'Lakomka',amount:300.00,cat:'Продукты'},
+       {id:'c19',date:'17.06',desc:'Lakomka',amount:8.00,cat:'Продукты'},
+       {id:'c20',date:'17.06',desc:'Wink',amount:399.00,cat:'Подписки'},
+       {id:'c21',date:'17.06',desc:'Perekrestok Golden Park',amount:962.54,cat:'Продукты'},
+       {id:'c22',date:'18.06',desc:'Travelers Coffee',amount:279.20,cat:'Рестораны'},
+       {id:'c23',date:'18.06',desc:'Perekrestok Golden Park',amount:149.98,cat:'Продукты'},
+       {id:'c24',date:'18.06',desc:'Yandex*Market (одежда Кати)',amount:9459.00,cat:'Одежда'},
+       {id:'c25',date:'18.06',desc:'Yandex*Market (одежда Кати)',amount:4698.00,cat:'Одежда'},
+       {id:'c26',date:'18.06',desc:'Yandex*Plus',amount:499.00,cat:'Подписки'},
+       {id:'c27',date:'18.06',desc:'Perekrestok Golden Park',amount:436.11,cat:'Продукты'},
+       {id:'c28',date:'18.06',desc:'Perekrestok Golden Park',amount:329.97,cat:'Продукты'},
+       {id:'c29',date:'18.06',desc:'Kazan Gril',amount:250.00,cat:'Рестораны'},
+       {id:'c30',date:'19.06',desc:'SPP 23604',amount:283.00,cat:'Рестораны'},
+       {id:'c31',date:'19.06',desc:'SPP 70309',amount:412.00,cat:'Рестораны'},
+       {id:'c32',date:'19.06',desc:'Perekrestok Golden Park',amount:199.98,cat:'Продукты'},
+       {id:'c33',date:'19.06',desc:'Kazan Gril',amount:250.00,cat:'Рестораны'},
+       {id:'c34',date:'20.06',desc:'TK Lenta-317',amount:3716.53,cat:'Продукты'},
+       {id:'c35',date:'20.06',desc:'Yandex*Split (одежда)',amount:1169.00,cat:'Одежда'},
+       {id:'c36',date:'20.06',desc:'Perekrestok Golden Park',amount:109.99,cat:'Продукты'},
+       {id:'c37',date:'20.06',desc:'Perekrestok Golden Park',amount:202.29,cat:'Продукты'},
+       {id:'c38',date:'20.06',desc:'Kazan Gril',amount:250.00,cat:'Рестораны'},
+       {id:'c39',date:'21.06',desc:'Magnit MM Motylevo',amount:3075.32,cat:'Продукты'},
+       {id:'c40',date:'21.06',desc:'SPP 23604',amount:62.00,cat:'Рестораны'},
+       {id:'c41',date:'21.06',desc:'Perekrestok Golden Park',amount:202.19,cat:'Продукты'},
+       {id:'c42',date:'21.06',desc:'Perekrestok Golden Park',amount:69.99,cat:'Продукты'},
+       {id:'c43',date:'21.06',desc:'Kazan Gril',amount:250.00,cat:'Рестораны'},
+       {id:'c44',date:'21.06',desc:'Magnit MM Butan',amount:1255.98,cat:'Продукты'},
+       {id:'c45',date:'21.06',desc:'Perekrestok Golden Park',amount:199.98,cat:'Продукты'},
+       {id:'c46',date:'22.06',desc:'Magnit MM Butan',amount:1272.96,cat:'Продукты'},
+       {id:'c47',date:'22.06',desc:'Perekrestok Evropa Siti',amount:89.99,cat:'Продукты'},
+       {id:'c48',date:'22.06',desc:'Galamart',amount:159.00,cat:'Одежда'},
+       {id:'c49',date:'22.06',desc:'Perekrestok Golden Park',amount:299.99,cat:'Продукты'},
+       {id:'c50',date:'22.06',desc:'Perekrestok Golden Park',amount:998.92,cat:'Продукты'},
+       {id:'c51',date:'22.06',desc:'Goldenfarm',amount:2373.50,cat:'Здоровье'},
+       {id:'c52',date:'22.06',desc:'Perekrestok Golden Park',amount:311.21,cat:'Продукты'}
      ]},
     {id:'j26w2', label:'Июнь, нед 2', dates:'08–14.06', income:50000, comp:50000, carComp:10000, spent:27111.27,
      sber:null, car:null, note:'Доход: 50к ЗП + 50к серый от компании. Личные расходы 27 111,27 ₽ (выписка минус бизнес: 15к Л.Евдокия, 17.5к ИП Фурсов, 900₽ наличные, 5000₽ перевод себе). Авто: -10к компенсация компании на бензин. Штраф Госуслуги 3375₽ — за авто.',
@@ -578,6 +634,7 @@ function applyEnv(id, action) {
     if (def.mode === 'flow') e.monthSet = Math.max(0, e.monthSet - amt);
   }
   saveData(); closeModal(); renderEnvelopes(); renderHome();
+  syncConfig();
 }
 
 // ── Expenses ──────────────────────────────────────────────
@@ -712,6 +769,8 @@ function deleteTxn(txnId) {
     }
   }
   saveData(); renderExpenses();
+  var sw=null;for(var i=0;i<D.weeks.length;i++){if(D.weeks[i].id===expWeekId){sw=D.weeks[i];break;}}
+  if(sw)syncWeek(sw);
 }
 
 function openRecat(txnId) {
@@ -841,6 +900,9 @@ function submitWeek() {
   if(editId){for(var i=0;i<D.weeks.length;i++){if(D.weeks[i].id===editId){D.weeks[i]=entry;break;}}}
   else D.weeks.push(entry);
   saveData(); setSave('✅ Сохранено','ok'); cancelEdit(); renderAll();
+  // Sync to Notion
+  var savedWeek=null;for(var i=0;i<D.weeks.length;i++){if(D.weeks[i].id===entry.id){savedWeek=D.weeks[i];break;}}
+  if(savedWeek)syncWeek(savedWeek);
   setTimeout(function(){setSave('','');},2500);
 }
 function setSave(m,c){var e=document.getElementById('save-status');e.textContent=m;e.className='save-status '+(c||'');}
@@ -925,6 +987,7 @@ function submitAddInvest(){
     entries:[{id:'e'+Date.now(),date:y,desc:'Первоначальная инвестиция',amount:amt}]};
   if(!D.investments)D.investments=[];
   D.investments.push(inv);saveData();closeModal();renderInvestments();
+  syncConfig();
 }
 function showUpdInvest(id,mode){
   var inv=null;for(var i=0;i<D.investments.length;i++){if(D.investments[i].id===id){inv=D.investments[i];break;}}
@@ -950,6 +1013,7 @@ function applyUpdInvest(id,mode){
   else{var a=Number((document.getElementById('mu-a')||{}).value||0),d=((document.getElementById('mu-d')||{}).value||'Пополнение').trim();
     if(a){inv.invested+=a;inv.currentVal+=a;var dt=new Date();inv.entries.push({id:'e'+Date.now(),date:dt.getDate()+'.'+(dt.getMonth()+1),desc:d,amount:a});}}
   saveData();closeModal();renderInvestments();
+  syncConfig();
 }
 
 // ── Calculator ────────────────────────────────────────────
@@ -961,8 +1025,8 @@ var CALC_ITEMS=[
   {id:'food',     icon:'🛒',name:'Еда',                      weekly:20000,active:true, note:'~80к/мес ÷ 4'},
   {id:'fuel',     icon:'⛽',name:'Бензин + связь',            weekly:3750, active:true, note:'~15к/мес ÷ 4'},
   {id:'course',   icon:'📚',name:'Рассрочка курс',           weekly:1500, active:true, note:'6к/мес ÷ 4'},
-  {id:'cushion',  icon:'🛡️',name:'Подушка безопасности',    weekly:5000, active:true, note:'Цель 300к'},
-  {id:'vacation', icon:'🏖️',name:'Отпуск',                  weekly:6250, active:true, note:'250к ÷ ~40 нед'},
+  {id:'cushion',  icon:'🛡',name:'Подушка безопасности',    weekly:5000, active:true, note:'Цель 300к'},
+  {id:'vacation', icon:'🏝',name:'Отпуск',                  weekly:6250, active:true, note:'250к ÷ ~40 нед'},
   {id:'boss',     icon:'🤝',name:'Долг шефу',                weekly:5000, active:false,note:'Гибко'}
 ];
 function renderCalc(){
@@ -1024,43 +1088,111 @@ function setTab(tab){
   if(tab==='add')renderHistory();
 }
 
+// ── Notion sync helpers ───────────────────────────────────
+function syncWeek(w) {
+  if (!NOTION_WORKER) return;
+  fetch(NOTION_WORKER, {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({type: 'week', id: w.id, label: w.label,
+      dates: w.dates, income: w.income, comp: w.comp, carComp: w.carComp,
+      spent: w.spent, sber: w.sber, car: w.car, note: w.note,
+      transactions: w.transactions || [], notionPageId: w.notionPageId || null})
+  }).then(function(r){return r.json();}).then(function(data){
+    if (data.notionPageId) {
+      for (var i=0;i<D.weeks.length;i++){
+        if(D.weeks[i].id===w.id){D.weeks[i].notionPageId=data.notionPageId;break;}
+      }
+      saveData();
+    }
+  }).catch(function(){});
+}
+
+function syncConfig() {
+  if (!NOTION_WORKER) return;
+  fetch(NOTION_WORKER, {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({type: 'config', envelopes: D.envelopes, investments: D.investments})
+  }).catch(function(){});
+}
+
 // ── Init ──────────────────────────────────────────────────
 (function(){
-  var stored=loadData();
-  if(stored){
-    D=stored;
-    // Migration: backfill weeks whose transactions are empty/missing but SEED has real data
-    var seedMap={};
-    for(var i=0;i<SEED.weeks.length;i++){seedMap[SEED.weeks[i].id]=SEED.weeks[i];}
-    var storedIds={};
-    if(!D.weeks)D.weeks=[];
-    for(var i=0;i<D.weeks.length;i++){
-      var w=D.weeks[i];
-      storedIds[w.id]=true;
-      var sw=seedMap[w.id];
-      if(sw && (!w.transactions||w.transactions.length===0) && sw.transactions && sw.transactions.length>0){
-        D.weeks[i]=JSON.parse(JSON.stringify(sw));
-      }
-    }
-    // Add any brand-new seed weeks that don't exist in stored data at all
-    for(var i=0;i<SEED.weeks.length;i++){
-      if(!storedIds[SEED.weeks[i].id]){
-        D.weeks.push(JSON.parse(JSON.stringify(SEED.weeks[i])));
-      }
-    }
-    saveData();
-  } else {
-    D=JSON.parse(JSON.stringify(SEED));
-  }
-  if(!D.envelopes) D.envelopes=JSON.parse(JSON.stringify(SEED.envelopes));
-  if(!D.investments) D.investments=JSON.parse(JSON.stringify(SEED.investments));
-  // Migrate old expenses format
-  if(D.weeks){D.weeks.forEach(function(w){if(w.expenses&&!w.transactions){w.transactions=w.expenses.map(function(e,i){return{id:'t'+i,date:'',desc:e.cat,amount:e.amount,cat:e.cat};});delete w.expenses;}});}
-  if(!stored) saveData();
   var months=['Январь','Февраль','Март','Апрель','Май','Июнь','Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь'];
-  var d=new Date(); document.getElementById('month-label').textContent=months[d.getMonth()]+' '+d.getFullYear();
-  renderAll();
+  var d=new Date();
+  document.getElementById('month-label').textContent=months[d.getMonth()]+' '+d.getFullYear();
+
+  // Show loading overlay
+  var overlay=document.createElement('div');
+  overlay.id='loading-overlay';
+  overlay.style.cssText='position:fixed;inset:0;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:999;gap:14px';
+  overlay.innerHTML='<div style="font-size:32px">⏳</div><div style="font-size:13px;color:var(--sub);letter-spacing:1px">Загрузка данных…</div>';
+  document.body.appendChild(overlay);
+
+  function applyData(remote) {
+    // Start with local or seed
+    var local=loadData();
+    if(!local) local=JSON.parse(JSON.stringify(SEED));
+    if(!local.envelopes) local.envelopes=JSON.parse(JSON.stringify(SEED.envelopes));
+    if(!local.investments) local.investments=JSON.parse(JSON.stringify(SEED.investments));
+
+    if (remote) {
+      // Merge remote weeks into local (remote is authoritative for week data)
+      var localById={};
+      for(var i=0;i<local.weeks.length;i++) localById[local.weeks[i].id]=i;
+
+      for(var i=0;i<remote.weeks.length;i++){
+        var rw=remote.weeks[i];
+        if(localById[rw.id]!==undefined){
+          // Week exists locally - update fields but keep any local-only transactions
+          var lw=local.weeks[localById[rw.id]];
+          // Merge transactions by id
+          var txMap={};
+          (rw.transactions||[]).forEach(function(t){txMap[t.id]=t;});
+          (lw.transactions||[]).forEach(function(t){if(!txMap[t.id])txMap[t.id]=t;});
+          var merged=Object.values(txMap);
+          merged.sort(function(a,b){return(a.date||'')>(b.date||'')?1:-1;});
+          local.weeks[localById[rw.id]]=Object.assign({},rw,{transactions:merged});
+        } else {
+          // New week from Notion - add it
+          local.weeks.push(rw);
+        }
+      }
+      local.weeks.sort(function(a,b){return a.id<b.id?-1:1;});
+
+      // Use remote envelopes/investments if available
+      if(remote.envelopes) local.envelopes=remote.envelopes;
+      if(remote.investments) local.investments=remote.investments;
+    }
+
+    // Migrate old expenses format
+    local.weeks.forEach(function(w){
+      if(w.expenses&&!w.transactions){
+        w.transactions=w.expenses.map(function(e,i){return{id:'t'+i,date:'',desc:e.cat,amount:e.amount,cat:e.cat};});
+        delete w.expenses;
+      }
+    });
+
+    D=local;
+    saveData();
+    // Remove overlay and render
+    var ov=document.getElementById('loading-overlay');
+    if(ov) ov.remove();
+    renderAll();
+  }
+
+  // Try to fetch from Notion via Worker
+  if (NOTION_WORKER) {
+    fetch(NOTION_WORKER)
+      .then(function(r){return r.json();})
+      .then(function(remote){applyData(remote);})
+      .catch(function(){applyData(null);});
+  } else {
+    applyData(null);
+  }
 })();
 </script>
 </body>
+</html>
 </html>
